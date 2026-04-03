@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include("tasks.urls")),
     path('api/login/', TokenObtainPairView.as_view()),
+    path('api/projects/', include("projects.urls")),
 ]
