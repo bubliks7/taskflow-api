@@ -1,101 +1,88 @@
-🚀 TaskFlow API
+# 🚀 TaskFlow API
 
-A REST API for project and task management (inspired by Trello).
+REST API do zarządzania projektami i zadaniami (inspirowane Trello).
 
-🔧 Tech Stack
+## 🔧 Technologie
 
+* Python
+* Django
+* Django REST Framework
+* JWT Authentication
+* Docker
 
-→ Python
+---
 
-→ Django
+## ✨ Funkcjonalności
 
-→ Django REST Framework
+* Rejestracja i logowanie użytkownika (JWT)
+* Tworzenie projektów
+* Dodawanie członków do projektów
+* Tworzenie i zarządzanie taskami
+* Przypisywanie tasków do użytkowników
+* Filtrowanie tasków (status, priority, project)
+* System uprawnień:
 
-→ JWT Authentication
+  * tylko owner lub member widzi projekt
+  * tylko owner/member może dodać task
+  * brak dostępu do чужych projektów
 
-→ Docker
-    
-✨ Features
+---
 
+## 🔐 Autoryzacja
 
-→ User registration and login (JWT-based authentication)
+API używa JWT.
 
-→ Create and manage projects
+W nagłówku:
+Authorization: Bearer <token>
 
-→ Add members to projects
+---
 
-→ Create and manage tasks
+## 📦 Endpointy
 
-→ Assign tasks to users
+### Auth
 
-→ Task filtering (by status, priority, project)
+* POST /api/token/ – logowanie
 
-    
-🔐 Permissions System
+---
 
+### Projects
 
-→ Only the owner or project members can view a project
+* GET /api/projects/
+* POST /api/projects/
+* PUT /api/projects/<id>/
+* DELETE /api/projects/<id>/
 
-→ Only the owner or members can create tasks
+---
 
-→ No access to projects you don’t belong to
-    
-🔐 Authentication
+### Tasks
 
+* GET /api/tasks/
+* POST /api/tasks/
+* GET /api/tasks/<id>/
+* PUT /api/tasks/<id>/
+* DELETE /api/tasks/<id>/
 
-→ The API uses JWT for authentication.
+---
 
-→ Include the token in the request header:
+## 🔍 Filtrowanie
 
-→ Authorization: Bearer <your_token>
-    
-📦 API Endpoints
+Możesz filtrować taski:
 
-🔑 Authentication
+* /api/tasks/?status=TODO
+* /api/tasks/?priority=HIGH
+* /api/tasks/?project=1
 
+---
 
-→ POST /api/token/ – obtain JWT token (login)
-    
-📁 Projects
+## 🐳 Uruchomienie (Docker)
 
+```bash
+docker compose build
+docker compose up
+```
 
-→ GET /api/projects/ – list projects
+---
 
-→ POST /api/projects/ – create a project
+## 🧠 Autor
 
-→ PUT /api/projects/<id>/ – update a project
-
-→ DELETE /api/projects/<id>/ – delete a project
-    
-✅ Tasks
-
-
-→ GET /api/tasks/ – list tasks
-
-→ POST /api/tasks/ – create a task
-
-→ GET /api/tasks/<id>/ – retrieve a task
-
-→ PUT /api/tasks/<id>/ – update a task
-
-→ DELETE /api/tasks/<id>/ – delete a task
-    
-🔍 Filtering
-
-You can filter tasks using query parameters:
-
-    
-→ /api/tasks/?status=TODO
-
-→ /api/tasks/?priority=HIGH
-
-→ /api/tasks/?project=1
-    
-🐳 Running the Project (Docker)
-
-    docker compose build
-    docker compose up
-    
-🧠 Author
-
-This project was built as a backend portfolio project (junior level).
+Projekt wykonany jako projekt portfolio backend (junior).
