@@ -5,9 +5,13 @@ A REST API for project and task management (inspired by Trello).
 🔧 Tech Stack
 
 → Python
+
 → Django
+
 → Django REST Framework
+
 → JWT Authentication
+
 → Docker
     
 ✨ Features
