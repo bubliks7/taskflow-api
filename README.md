@@ -1,8 +1,8 @@
 # 🚀 TaskFlow API
 
-REST API do zarządzania projektami i zadaniami (inspirowane Trello).
+REST API for managing projects and tasks (inspired by Trello).
 
-## 🔧 Technologie
+## 🔧 Technologies
 
 * Python
 * Django
@@ -12,36 +12,36 @@ REST API do zarządzania projektami i zadaniami (inspirowane Trello).
 
 ---
 
-## ✨ Funkcjonalności
+## ✨ Features
 
-* Rejestracja i logowanie użytkownika (JWT)
-* Tworzenie projektów
-* Dodawanie członków do projektów
-* Tworzenie i zarządzanie taskami
-* Przypisywanie tasków do użytkowników
-* Filtrowanie tasków (status, priority, project)
-* System uprawnień:
+* User registration and login (JWT)
+* Creating projects
+* Adding members to projects
+* Creating and managing tasks
+* Assigning tasks to users
+* Task filtering (status, priority, project)
+* Permission system:
 
-  * tylko owner lub member widzi projekt
-  * tylko owner/member może dodać task
-  * brak dostępu do чужych projektów
+  * only owner or member can view a project
+  * only owner/member can add tasks
+  * no access to other users' projects
 
 ---
 
-## 🔐 Autoryzacja
+## 🔐 Authorization
 
-API używa JWT.
+The API uses JWT.
 
-W nagłówku:
+In the header:
 Authorization: Bearer <token>
 
 ---
 
-## 📦 Endpointy
+## 📦 Endpoints
 
 ### Auth
 
-* POST /api/token/ – logowanie
+* POST /api/token/ – login
 
 ---
 
@@ -64,9 +64,9 @@ Authorization: Bearer <token>
 
 ---
 
-## 🔍 Filtrowanie
+## 🔍 Filtering
 
-Możesz filtrować taski:
+You can filter tasks:
 
 * /api/tasks/?status=TODO
 * /api/tasks/?priority=HIGH
@@ -74,15 +74,8 @@ Możesz filtrować taski:
 
 ---
 
-## 🐳 Uruchomienie (Docker)
+## 🐳 Run (Docker)
 
 ```bash
 docker compose build
 docker compose up
-```
-
----
-
-## 🧠 Autor
-
-Projekt wykonany jako projekt portfolio backend (junior).
